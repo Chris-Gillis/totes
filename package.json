@@ -1,0 +1,28 @@
+{
+  "name": "Totes",
+  "version": "0.0.0",
+  "description": "Chainable assertion framework for Javascript",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/z3roshot/totesjs"
+  },
+  "author": "Christopher Gillis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/z3roshot/totesjs/issues"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "homepage": "https://github.com/z3roshot/totesjs",
+  "devDependencies": {
+    "mocha": "~1.20.1"
+  }
+}
