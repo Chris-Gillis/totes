@@ -1,6 +1,6 @@
 ## Totes.js - Chainable assertion library for javascript
 
-
+![travis badge](https://travis-ci.org/z3roshot/totes.svg?branch=master)
 
 ## License
 
