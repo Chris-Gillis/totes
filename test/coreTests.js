@@ -1,7 +1,5 @@
 var expect = require('../lib/expect').expect;
 
-var expectError = require('../lib/expect').expectError;
-
 describe("is", function(){
 	it("should work when equal strings", function(){
 		expect("string").is("string");
@@ -16,9 +14,7 @@ describe("is", function(){
 	});
 
 	it("should throw error when not equal", function(){
-		expectError(function(){
-			expect("different").is("strings");
-		});
+		expect(function(){ expect("different").is("strings"); }).throws();
 	});
 });
 
@@ -28,9 +24,7 @@ describe('isExactly', function(){
 	});
 
 	it("should throw error when equal value but not type", function(){
-		expectError(function(){
-			expect(123).isExactly("123");
-		});
+		expect(function(){ expect(123).isExactly("123"); }).throws();
 	});
 });
 
@@ -40,16 +34,10 @@ describe("isTruthy", function(){
 	});
 
 	it("should throw error when not truthy", function(){
-		expectError(function(){
-			expect(false).isTruthy();
-		});
+		expect(function(){ expect(false).isTruthy(); }).throws();
 
-		expectError(function(){
-			expect('').isTruthy();
-		});
+		expect(function(){ expect('').isTruthy(); }).throws();
 
-		expectError(function(){
-			expect(undefined).isTruthy();
-		})
+		expect(function(){ expect(undefined).isTruthy(); }).throws();
 	})
 });
