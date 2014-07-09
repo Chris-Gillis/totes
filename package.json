@@ -16,9 +16,9 @@
   "author": "Christopher Gillis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/z3roshot/totesjs/issues"
+    "url": "https://github.com/z3roshot/totes/issues"
   },
-  "homepage": "https://github.com/z3roshot/totesjs",
+  "homepage": "https://github.com/z3roshot/totes",
   "devDependencies": {
     "mocha": "~1.20.1",
     "assertion-error": "~1.0.0"
