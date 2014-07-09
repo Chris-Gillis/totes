@@ -1,13 +1,13 @@
 {
   "name": "totes",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Chainable assertion framework for Javascript",
   "main": "./totes.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -18,11 +18,9 @@
   "bugs": {
     "url": "https://github.com/z3roshot/totesjs/issues"
   },
-  "scripts": {
-    "test": "mocha"
-  },
   "homepage": "https://github.com/z3roshot/totesjs",
   "devDependencies": {
-    "mocha": "~1.20.1"
+    "mocha": "~1.20.1",
+    "assertion-error": "~1.0.0"
   }
 }
