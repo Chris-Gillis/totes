@@ -1,6 +1,59 @@
-## Totes.js - Chainable assertion library for javascript
+## Totes.js - Chainable, expandable assertion library for javascript
 
 ![travis badge](https://travis-ci.org/z3roshot/totes.svg?branch=master)
+
+### Install
+
+`npm install totes`
+
+### Usage
+
+`var expect = require('totes');`
+
+expect wraps the value in an Assertable object
+
+`var assertable = expect(testExpression);`
+
+Assertable objects have several assertion functions available
+
+```javascript
+assertable.isTruthy();
+assertable.is(expressionToTestAgainstValue);
+assertable.isExactly(expressionToTestAgainstValueAndType);
+```
+
+If any assertion fails, it will throw an AssertionError which will be detected by test runners including [mocha](https://github.com/visionmedia/mocha)
+
+#### Chaining
+
+You can chain assertions for more terse syntax
+
+```
+expect(testExpression)
+    .isTruthy()
+    .is(someOtherExpression)
+    .isExactly(aThirdExpression);
+```
+
+#### Expanding
+
+Since totes has a small core centered around the Assertable object, you can write your own assertions by extending the Assertable prototype.
+
+```javascript
+var Assertable = require('totes');
+
+Assertable.prototype.isHelloString = function(){
+  // you can access the internal value with this.value
+  
+  if(typeof(this.value) !== 'string' || this.value !== 'Hello!'){
+    throw AssertionError();
+  }
+  
+  return this;
+}
+```
+
+*Note: always `return this;` at the end of your new assertions or it will break chaining.*
 
 ## License
 
