@@ -1,13 +1,14 @@
 var expect = require('../lib/expect').expect;
 
 describe('throws', function(){
-	it('should fail when not a function', function(){
+	it('should fail when not a function', function(done){
 		try{
 			expect('obviously not a function').throws();
+
 			throw new AssertionError('Expected throw');
 		}
 		catch(err){
-			// Success if this is reached
+			done();
 		}
 	});
 	
@@ -15,13 +16,14 @@ describe('throws', function(){
 		expect(throwFn).throws();
 	});
 
-	it('should fail when no error is thrown', function(){
+	it('should fail when no error is thrown', function(done){
 		try{
 			expect(function(){}).throws()
+
 			throw new AssertionError('Expected throw');
 		}
 		catch(err){
-			// Success if this is reached
+			done();
 		}
 	});
 });
