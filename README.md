@@ -8,7 +8,7 @@
 
 ### Usage
 
-`var expect = require('totes');`
+`var expect = require('totes').expect;`
 
 expect wraps the value in an Assertable object
 
