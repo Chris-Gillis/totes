@@ -40,20 +40,26 @@ expect(testExpression)
 Since totes has a small core centered around the Assertable object, you can write your own assertions by extending the Assertable prototype.
 
 ```javascript
-var Assertable = require('totes');
+var Assertable = require('totes').assertable;
 
 Assertable.prototype.isHelloString = function(){
   // you can access the internal value with this.value
-  
-  if(typeof(this.value) !== 'string' || this.value !== 'Hello!'){
-    throw AssertionError();
-  }
-  
-  return this;
+  return this.internalIs(function(val){
+      return typeof(val) === 'string' &&  val === 'Hello';
+  }, true, 'Custom assertion error goes here');
 }
 ```
 
-*Note: always `return this;` at the end of your new assertions or it will break chaining.*
+Then to use the new function, simply call it like any other assertion
+
+```javascript
+expect('Hello').isHelloString(); // Should pass
+expect('other string').isHelloString(); // Should fail
+```
+
+You can return any of `is...` functions or `internalIs` to hook into the assertion system.
+
+*Note: always return the `is` function call at the end of your new assertions or it will break chaining.*
 
 ## License
 
