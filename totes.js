@@ -1,1 +1,1 @@
-exports.expect = require('./lib/expect');
+exports.expect = require('./lib/expect').expect;
