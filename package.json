@@ -1,6 +1,6 @@
 {
   "name": "totes",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Chainable assertion framework for Javascript",
   "main": "./totes.js",
   "directories": {
