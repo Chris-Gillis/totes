@@ -25,3 +25,27 @@ describe('isTrue', function(){
 		}
 	});
 });
+
+describe('isFalse', function(){
+	it('should throw when assertion fails', function(done){
+		try{
+			expect('test string').isFalse(assertion);
+			throw new AssertionError('Assertion did not throw')
+		}
+		catch(e){
+			done();
+		}
+
+		function assertion(val){
+			return val === 'test string';	
+		}
+	});
+
+	it('should not throw when assertion succeeds', function(){
+		expect('test string').isFalse(assertion);
+
+		function assertion(val){
+			return val === 'not test string';
+		}
+	});
+});
