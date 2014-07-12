@@ -1,6 +1,6 @@
 ## Totes.js - Chainable, expandable assertion library for javascript
 
-![travis badge](https://travis-ci.org/z3roshot/totes.svg?branch=master)
+![travis badge](https://travis-ci.org/z3roshot/totes.svg?branch=dev)
 
 ### Install
 
@@ -44,9 +44,9 @@ var Assertable = require('totes').assertable;
 
 Assertable.prototype.isHelloString = function(){
   // you can access the internal value with this.value
-  return this.internalIs(function(val){
+  return this.isTrue(function(val){
       return typeof(val) === 'string' &&  val === 'Hello';
-  }, true, 'Custom assertion error goes here');
+  }, 'Custom assertion error goes here');
 }
 ```
 
@@ -57,9 +57,7 @@ expect('Hello').isHelloString(); // Should pass
 expect('other string').isHelloString(); // Should fail
 ```
 
-You can return any of `is...` functions or `internalIs` to hook into the assertion system.
-
-*Note: always return the `is` function call at the end of your new assertions or it will break chaining.*
+Simply return `this.isTrue` or `this.isFalse` to hook into the chaining mechanism.
 
 ## License
 
