@@ -125,10 +125,38 @@ describe('isNegative', function(){
 	});
 });
 
+describe('isZero', function(){
+	it('should pass when value is exactly 0', function(){
+		expect(0).isZero();
+	});
 
+	it('should fail when value is not 0 but can be coerced to 0', function(){
+		var emptyArrayAssertion = expect([]).isZero;
+		expect(emptyArrayAssertion).throws();
 
+		var emptyStringAssertion = expect("").isZero;
+		expect(emptyStringAssertion).throws();
 
+		var zeroStringAssertion = expect("0").isZero;
+		expect(zeroStringAssertion).throws();
+		
+		var falseAssertion = expect(false).isZero;
+		expect(falseAssertion).throws();
+	});
 
+	it('should fail for falsy values that are not exactly 0', function(){
+		var nullAssertion = expect(null).isZero;
+		expect(nullAssertion).throws();
 
+		var undefinedAssertion = expect(undefined).isZero;
+		expect(undefinedAssertion).throws();
+	});
 
+	it('should fail for non-zero values', function(){
+		var positiveAssertion = expect(1).isZero;
+		expect(positiveAssertion).throws();
 
+		var negativeAssertion = expect(-1).isZero;
+		expect(negativeAssertion).throws();
+	});
+});
