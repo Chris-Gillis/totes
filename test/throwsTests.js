@@ -26,9 +26,9 @@ describe('throws', function(){
 			done();
 		}
 	});
+
+	function throwFn(){
+		throw new Error("I AM AN ERROR");
+	}
+
 });
-
-
-function throwFn(){
-	throw new Error("I AM AN ERROR");
-}
