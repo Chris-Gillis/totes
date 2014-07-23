@@ -1,7 +1,10 @@
-## Totes.js - Chainable, expandable assertion library for javascript
+<img src="http://i.imgur.com/aQkjwqR.png" width="150" height="auto" align="left" hspace="12" />
+
+<h1>Totes - Chainable, expandable assertion library for javascript</h1>
 
 ![travis badge](https://travis-ci.org/z3roshot/totes.svg?branch=dev)
 
+     
 ### Install
 
 `npm install totes`
