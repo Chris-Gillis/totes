@@ -1,4 +1,4 @@
-var expect = require('../totes').expect; 
+var expect = require('../index').expect; 
 
 var AssertionError = require('assertion-error');
 

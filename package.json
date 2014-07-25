@@ -1,8 +1,8 @@
 {
   "name": "totes",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Chainable assertion framework for Javascript",
-  "main": "./totes.js",
+  "main": "./index.js",
   "directories": {
     "test": "test"
   },
@@ -25,6 +25,8 @@
   "devDependencies": {
     "mocha": "~1.20.1",
     "gulp-shell": "~0.2.8",
-    "gulp": "~3.8.6"
+    "gulp": "~3.8.6",
+    "gulp-browserify": "~0.5.0",
+    "gulp-rename": "~1.2.0"
   }
 }
