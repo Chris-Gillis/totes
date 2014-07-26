@@ -62,6 +62,8 @@ expect('other string').isHelloString(); // Should fail
 
 Simply return `this.isTrue` or `this.isFalse` to hook into the chaining mechanism.
 
+*NOTE:* If you use totes in browser tests (for example in [karma](https://github.com/karma-runner/karma)) then replace `expect` with `totesExpect`. I made this change to avoid clashing with other libraries like [chai](http://chaijs.com/).
+
 ## License
 
 Copyright (c) 2014 Christopher Gillis
