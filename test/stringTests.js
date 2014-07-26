@@ -1,4 +1,4 @@
-var expect = require('../totes').expect;
+var expect = require('../index').expect;
 
 describe('isLetters', function(){
 	it('should pass when all lower case letters', function(){

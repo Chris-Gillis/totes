@@ -10,3 +10,7 @@ gulp.task('test', function(){
 		.pipe(shell('npm test'));
 	});	
 });
+
+gulp.task('build', function(){
+	gulp.src('').pipe(shell('browserify -r ./index.js:totes > totes.js'));
+});
