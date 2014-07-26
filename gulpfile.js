@@ -10,3 +10,13 @@ gulp.task('test', function(){
 		.pipe(shell('npm test'));
 	});	
 });
+
+var browserify = require('gulp-browserify');
+var rename = require('gulp-rename');
+
+gulp.task('build', function(){
+	gulp.src('./index.js')
+		.pipe(browserify({ standAlone: true }))
+		.pipe(rename('totes.js'))
+		.pipe(gulp.dest('./'));
+});
