@@ -1,8 +1,13 @@
 {
   "name": "totes",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Chainable assertion framework for Javascript",
   "main": "./index.js",
+  "keywords": [
+    "mocha",
+    "karma",
+    "testing"
+  ],
   "directories": {
     "test": "test"
   },
