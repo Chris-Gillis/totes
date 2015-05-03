@@ -80,6 +80,33 @@ describe('propertyIs', function(){
 	});
 });
 
+describe('propertyIsTruthy', function(){
+    it('should pass when object property is truthy', function(){
+        expect({a: 1}).propertyIsTruthy('a');
+        expect({a: '1'}).propertyIsTruthy('a');
+        expect({a: []}).propertyIsTruthy('a');
+        expect({a: {}}).propertyIsTruthy('a');
+    });
+
+    it('should fail when object property is not truthy', function(){
+        var zeroTest = gen(0);
+        var emptyStringTest = gen('');
+        var nullTest = gen(null);
+        var undefinedTest = gen();
+
+        expect(zeroTest).throws();
+        expect(emptyStringTest).throws();
+        expect(nullTest).throws();
+        expect(undefinedTest).throws();
+
+        function gen(value){
+            return function(){
+                expect({a: value}).propertyIsTruthy('a');
+            };
+        }
+    });
+});
+
 describe('properyIsExactly', function(){
 	it('should pass when object has property exactly equal to', function(){
 		expect({a: 1}).propertyIsExactly('a', 1);	
