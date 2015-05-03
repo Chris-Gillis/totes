@@ -1,6 +1,6 @@
 {
   "name": "totes",
-  "version": "0.0.12",
+  "version": "1.0.0",
   "description": "Chainable assertion framework for Javascript",
   "main": "./index.js",
   "keywords": [
@@ -12,7 +12,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "node_modules/.bin/mocha"
   },
   "repository": {
     "type": "git",
